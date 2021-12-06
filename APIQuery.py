@@ -1,8 +1,8 @@
-#ingkey = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i="
 from urllib.request import urlopen
 import json
 
 """
+This is a class APIQuery() that contains functions to be called to various endpoints in the API and return JSON resoponse
 TO USE:
     *  Import APIQuery
     *  Make search by ingredient call:
