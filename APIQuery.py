@@ -19,13 +19,13 @@ class APIQuery():
         self.ingKey = self.key + "filter.php?i="    # Filter by alc ingredients
         self.naKey = self.key + "filter.php?a=Non_Alcoholic"    # Filter by non-alc 
         self.lingKey = self.key + "lookup.php?i="     # look up receipe for drink by ID
+        self.nonAlc = json.load(open("nonalc.json", "r"))
     
     def searchWorker(self, q):
         # q is an API call
         url = q
         response = urlopen(url) # open URL (API call)
         qResponse = json.load(response) # Read JSON response to call and load 
-        print(qResponse)
         return qResponse
 
     # Only constraints are ingredients
@@ -38,16 +38,48 @@ class APIQuery():
         """
         # ingSearch is multiple ingredient search API endpoint concat with list of ingredients xs
         ingSearch = self.ingKey + ",".join(xs)
-        print("\n")
-        print(ingSearch)
         workerRes = self.searchWorker(ingSearch)
+        print("\nWaiting for searchWorker")
 
         resDrinkIds = [x["idDrink"] for x in workerRes["drinks"]]   # Get ids of all drinks returned
         # lookup by id drinks to get their full profile
         drinksAndInstr = [self.searchWorker(self.lingKey + x)["drinks"][0] for x in resDrinkIds]
         ingCount = self.ingFinder(drinksAndInstr) # find number of ingredients for each drink
-
+        
         return (drinksAndInstr, ingCount)
+
+    def nonAlcSearchByIngredients(self, xs):
+        ingCount = self.ingFinder(self.nonAlc)
+        xs = set(xs)
+        dcount = 0
+        drinkList = []
+        closeDrinkList = []
+        for drink in self.nonAlc:
+            passableCheck = 0
+            for i in range(1, ingCount[dcount]):
+                if drink["strIngredient" + str(i)] in xs:
+                    passableCheck += 1
+            if passableCheck != 0 and passableCheck >= ingCount[dcount] / 2:
+                drinkList.append(drink)
+            elif passableCheck != 0:
+                closeDrinkList.append(drink)
+
+            dcount += 1
+        print("\nCloseDrinkList:\n" + str(closeDrinkList))
+        print("\nDrinkList:\n" + str(drinkList))
+        return drinkList
+
+    
+    def ingFinder(self, drinks):
+        ingCounter = []
+        for d in drinks:
+            ingCount = 1
+            while ingCount < 16:
+                if d["strIngredient" + str(ingCount)] == None:
+                    break
+                ingCount += 1
+            ingCounter.append(ingCount)
+        return ingCounter
 
     # Not in active use, used once to get all non alc data
     # def scrapeNonAlc(self):
@@ -62,21 +94,11 @@ class APIQuery():
 
     #     outfile = open('nonalc.json', 'w')
     #     json.dump(drinksAndInstr, outfile)
-    
-    def ingFinder(self, drinks, xs):
-        ingCounter = []
-        for d in drinks:
-            ingCount = 0
-            while True:
-                if d["strMeasure" + ingCount] == "null":
-                    break
-                ingCount += 1
-            ingCounter.append(ingCount)
-        return drinks
              
 
 q = APIQuery()
-#q.searchByIngredients(['Gin', 'Lime'])
+#q.nonAlcSearchByIngredients([1,2])
+q.nonAlcSearchByIngredients(['Lime'])
 
     
 
