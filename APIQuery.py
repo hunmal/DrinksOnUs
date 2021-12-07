@@ -67,8 +67,7 @@ class APIQuery():
             dcount += 1
         print("\nCloseDrinkList:\n" + str(closeDrinkList))
         print("\nDrinkList:\n" + str(drinkList))
-        return drinkList
-
+        return ( (drinkList, self.ingFinder(drinkList), (closeDrinkList, self.ingFinder(closeDrinkList))) )
     
     def ingFinder(self, drinks):
         ingCounter = []
