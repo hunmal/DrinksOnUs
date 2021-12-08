@@ -1,0 +1,79 @@
+.home {
+  height:100px;
+  width:100px;
+}
+#drinks {
+  top:7000px;
+}
+.title{
+  text-align:center;
+  padding-top:50px;
+  font-size:25px;
+  color:#FDD9B5;
+}
+
+
+#search{
+  background-color:#86BBBD;
+  text-align:center;
+  margin: auto;
+  width:400px;
+  top:100px;
+  border: 3px solid #FDD9B5;
+  padding: 10px;
+  position: relative;
+ 
+}
+button{
+  
+  left: 32.9%;
+  padding:15px;
+}
+img{
+  width:150px;
+  height:150px;
+}
+.row {
+  
+  top:100px;
+  display: block;
+  position: relative;
+ 
+  cursor: pointer;
+  font-size: 20px;
+  
+}
+
+
+header {
+    color: #fff;
+    padding-top: 10vw;
+    padding-bottom: 8vw;
+
+    text-align: center;
+}
+
+
+
+
+
+
+
+.row{
+  padding:10px;
+}
+
+
+
+.drink{
+  background-color:#86BBBD;
+  text-align:center;
+  padding:50px;
+  height:350px;
+  font-size:20px;
+  border:5px solid #5F506B;
+}
+.drink:hover {
+  box-shadow: 20px 10px 40px 0px rgba(0, 0, 0, 0.5);
+}
+
