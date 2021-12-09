@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=800" />
+    <title>Drinks on Us</title>
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,500,700|Playfair+Display:700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'dist/css/style.css') }}">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+<body style="background-color: #5F506B" style="text-align:center">
+	<a href="indexd.html">
+		<img style="height: 80px; width: 80px;" class = "home" src="https://cdn.glitch.me/bb65618a-4175-433f-bb99-013df2861f62%2F588a668cd06f6719692a2d1b.png?v=1638924387744">  
+	</a>
+	<div class="container">
+		<div>
+			<div style="text-align:center">
+				<h1 style="color: white; font-size: 50; font-weight: 300;">Drinks On Us</h1>
+				<p style="color: white; font-size: 30;">Use the buttons below to start searching for drink recipes based on ingredients you already have in your pantry!</p>
+				<div>
+					<a class="button button-shadow" style="background-color:#76949F" href="/cocktail/">Alcoholic Drinks</a>
+					<a  class="button button-shadow" style="background-color: #86BBBD"href="/mocktail/">Non-Alcoholic Drinks</a>
+				</div>
+				<div style="text-align: center">
+					<img class="displayed" src="{{ url_for('static', filename= 'dist/images/cocktail-shaker.png') }}" alt="Cocktail Shaker" style="height: 500px; width: 60%; margin: auto; display: block">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script src="{{ url_for('static', filename= 'dist/js/main.min.js') }}"></script>
+</body>
+</html>
