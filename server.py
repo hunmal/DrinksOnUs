@@ -22,7 +22,7 @@ def mocktailSearch():
     data = list(dict(request.form).keys())
     q = APIQuery()
     results = q.nonAlcSearchByIngredients(data)
-    render_template("/mocktail.html", response=results)
+    #render_template("/mocktail.html")
     return str(results)
 
 @app.route('/cocktail/')
