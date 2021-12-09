@@ -21,14 +21,22 @@
   <body style="background-color:#5F506B;">
     <script type="text/javascript" src="mocktail.js"></script>
 
-    <a href="index.html"><img style="height: 80px; width: 80px;" class = "home" src="https://cdn.glitch.me/bb65618a-4175-433f-bb99-013df2861f62%2F588a668cd06f6719692a2d1b.png?v=1638924387744">  </a> 
-<h1 class="title">
+    <a href="index.html"><img class = "home" src="https://cdn.glitch.me/bb65618a-4175-433f-bb99-013df2861f62%2F588a668cd06f6719692a2d1b.png?v=1638924387744">  </a> 
+<button id="top" onclick="clearPage()">
+  Clear Page
+    </button>
+    <button id="topMock" >
+      Random Mocktail!
+    </button>
+    
+    <p class="title" >
   Non-Alcoholic Drinks
-    </h1>
+    </p>
+    
 
       
-      
-      <form id="search"> 
+      <div class="center">
+      <form id="search" > 
         <p style="font-size:18px;"><strong>Filter by Ingredient</strong></p>
         <label style="font-size:12px;">
           <input type="checkbox"  />
@@ -104,29 +112,37 @@
           <input type="checkbox" />
           Cinnamon</label
         >
-        
+         <br> <br> <br>
       </form>
     <br>
       <button id="search" onclick="search()">
     Search
   </button>
+        <br>
+        
+  <div id="randoList">
+            
+          </div>
+   
     </div>
 <!--   <% q=APIQuery() %> 
     <% q.nonAlcSearchByIngredients(self, xs) %> -->
 
-  
+    
    <span class="row">
    
         <div id="list"class="col-lg-12 drinks">
 
         </div>
+     
 
   </span>
   
 
 
   
-  <script type="text/javascript" src="mocktail.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="nonalc.json"></script>
   </body>
 </html>
 
