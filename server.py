@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
+from flask.helpers import make_response
 from werkzeug.wrappers import response
 from APIQuery import APIQuery
 import json
@@ -23,17 +24,20 @@ def mocktailSearch():
     q = APIQuery()
     results = q.nonAlcSearchByIngredients(data)
     #render_template("/mocktail.html")
+    response  = make_response(render_template("/mocktail.html", results=results))
+    return response
     return str(results)
 
 @app.route('/cocktail/')
 def cocktail():
-    data = list(dict(request.form).keys())#['subSearchMock']
-    q = APIQuery()
-    results = q.searchByIngredients(data)
-    return str(results)
     return render_template("/cocktail.html")
     
 
 @app.route('/cocktail/search/')
 def cocktailSearch():
-    return "HelloWorld"
+    data = list(dict(request.form).keys())#['subSearchMock']
+    q = APIQuery()
+    results = q.searchByIngredients(data)
+    response  = make_response(render_template("/cocktail.html", results=results))
+    return response
+    
