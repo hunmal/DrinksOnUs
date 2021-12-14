@@ -6,14 +6,14 @@ In today’s society drinks at bars or restaurants are way too overpriced. In re
     Pip
 
 -- HOW TO INSTALL --
-    First, open a terminal
+    First, open a terminal and navigate into the project directory DrinksOnUS
 
-    Then, you must download the necessary python packages
+    Then, in the project directory, you must download the necessary python packages
         run the command:
 
             "pip install -r require.py"
     
-    Next, you must cd into the project directory and start the server
+    Next, in the same directory, start the server
         run the command:
 
             "FLASK_APP=server.py flask run"
