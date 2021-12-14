@@ -31,14 +31,14 @@ def mocktailSearch():
 # When GET request for cocktial page is made
 @app.route('/cocktail/')
 def cocktail():
-    return render_template("/cocktail.html")
+    return render_template("/indexx.html")
     
 # When POST request for cocktial search is made
-@app.route('/cocktail/search/')
+@app.route('/cocktail/search/',methods=['POST'])
 def cocktailSearch():
     data = list(dict(request.form).keys()) # Get data from HTML form
     q = APIQuery() # Init instance of APIQuery object
     results = q.searchByIngredients(data) # Query API through APIQuery member func
-    response  = make_response(render_template("/cocktail.html", results=results))
+    response  = make_response(render_template("/indexx.html", results=results))
     return response # Make and return a response object to be accessed in HTML
     

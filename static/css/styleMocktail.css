@@ -5,40 +5,77 @@
 #drinks {
   top:7000px;
 }
+
+
 .title{
   text-align:center;
   padding-top:50px;
-  font-size:25px;
+  font-size:45px;
   color:#FDD9B5;
 }
 
-
-#search{
+h3 {
+  padding-bottom:40px;
+  
+}
+#list button{
+  background-color:#533747;
+  color:white;
+  width:100%;
+}
+#top{
   background-color:#86BBBD;
   text-align:center;
-  margin: auto;
-  width:400px;
+
+  font-size:14px;
   top:100px;
   border: 3px solid #FDD9B5;
   padding: 10px;
-  position: relative;
+  position:absolute; top:25px; right:0;
+  
+
  
 }
-button{
+#search{
+  background-color:#86BBBD;
+  text-align:center;
+/*   margin: auto; */
+/*   width:50%; */
+/*   left: 50%; */
+  font-size:15px;
   
-  left: 32.9%;
-  padding:15px;
+  top:100px;
+  border: 3px solid #FDD9B5;
+  padding: 10px;
+/*   position: relative; */
+ 
 }
+.center {
+  margin: auto;
+  width: 50%;
+  
+  padding: 10px;
+}
+#search {
+  width:100%;
+  background-color:#86BBBD;
+  border: 2px solid #FDD9B5;
+ 
+}
+button:hover{
+  background-color:#533747;
+  color:white;
+  
+}
+
 img{
   width:150px;
   height:150px;
 }
 .row {
-  
-  top:100px;
+  top:25px;
   display: block;
   position: relative;
- 
   cursor: pointer;
   font-size: 20px;
   
@@ -59,11 +96,6 @@ header {
 
 
 
-.row{
-  padding:10px;
-}
-
-
 
 .drink{
   background-color:#86BBBD;
@@ -76,4 +108,31 @@ header {
 .drink:hover {
   box-shadow: 20px 10px 40px 0px rgba(0, 0, 0, 0.5);
 }
+#topMock{
+  background-color:#86BBBD;
+  text-align:center;
 
+  font-size:14px;
+  top:100px;
+  border: 3px solid #FDD9B5;
+  padding: 10px;
+  position:absolute; top:25px; right:100px;
+}
+ #randoDrink {
+  background-color:#86BBBD;
+  height:500px;
+}
+/*
+#randoList {
+  margin: auto;
+  width: 50%;
+  
+  padding: 10px;
+}
+#randoList button{
+  background-color:#533747;
+  color:white;
+  width:100%;
+}
+ */
+  

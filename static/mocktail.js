@@ -1,7 +1,35 @@
 // window.onload = function() {
 // document.getElementById("search").addEventListener("click", search());
 // }
-
+function randomMock(){
+  let request = new XMLHttpRequest();
+  let url = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=non_alcoholic";
+  request.open("GET", url, true);
+  request.onload = function() {
+    let data = JSON.parse(this.response);
+    let num = Math.floor(Math.random() * 5);
+     let poster = document.createElement("div");
+    poster.className = "randoDrink";
+    let list = document.getElementById("randoList");
+      
+      console.log(num);
+    console.log(data.drinks[num].strDrinkThumb);
+      let img = document.createElement("img");
+      img.src = data.drinks[num].strDrinkThumb;
+      let name = document.createElement("h3");
+      name.innerHTML = data.drinks[num].strDrink;
+      const button = document.createElement("button");
+      button.innerHTML = "Click for more info";
+       
+        
+      list.append(poster);
+      poster.appendChild(img);
+      poster.appendChild(name);
+      poster.appendChild(button);
+    console.log("Yes");
+  }
+  request.send();
+}
 function search() {
   let request = new XMLHttpRequest();
   let url =
@@ -12,11 +40,9 @@ function search() {
     let data = JSON.parse(this.response);
     let counter = 0;
     let row = 0;
-    let drinks = [];
-    let id = null;
+
     let list = document.getElementById("list");
-    let request2 = new XMLHttpRequest();
-    let url2 = "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + id;
+
 
     data.drinks.forEach(drink => {
       if (counter % 4 == 0) {
@@ -33,27 +59,28 @@ function search() {
       img.src = data.drinks[counter].strDrinkThumb;
       let name = document.createElement("h3");
       name.innerHTML = data.drinks[counter].strDrink;
-      let id = data.drinks[counter].idDrink;
-      request2.open("GET",url2,true);
-      let dataID = JSON.parse(this.response);
-      
-      //Append the name to the column div and column to the row
-      //for (let i = 0; i < 15; i++){
-      //if (data.drinks[counter].)
+      const button = document.createElement("button");
+      button.innerHTML = "Click for more info";
+ 
+      row.appendChild(poster);
       poster.appendChild(img);
       poster.appendChild(name);
-      row.appendChild(poster);
+      poster.appendChild(button);
+      
+      
 
       counter++;
     });
-//     let request2 = new XMLHttpRequest();
-//     let url2 =
-//       "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + idFromArray;
-//     for (let i = 0; i < drinks.length; i++) {
-      
-//     }
+  
   };
 
   request.send();
+}
+// var non = 'nonalc.json';
+//  console.log(non.hits[0].idDrink);
+
+function clearPage() {
+    let list = document.getElementById("list");
+    list.innerHTML = "";
 }
 
