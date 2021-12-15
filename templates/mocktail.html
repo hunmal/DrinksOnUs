@@ -44,12 +44,12 @@
           </label>
   <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Orange_juice" type="checkbox" />
+            <input name="Orange juice" type="checkbox" />
               Orange juice
           </label>
   <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Pineapple_Juice" type="checkbox" />
+            <input name="Pineapple Juice" type="checkbox" />
               Pineapple Juice
           </label>
   <!--         <br /> -->
@@ -69,17 +69,17 @@
           </label>
           <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Guava_Juice" type="checkbox" />
+            <input name="Guava Juice" type="checkbox" />
               Guava juice
           </label>
            <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Lemon_Juice" type="checkbox" />
+            <input name="Lemon juice" type="checkbox" />
               Lemon juice
           </label>
           <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Pineapple" type="checkbox" />
+            <input name="Pineapple Juice" type="checkbox" />
               Pineapple
             </label>
            <!--         <br /> -->
@@ -89,17 +89,17 @@
           </label>
            <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Grapefruit_Juice" type="checkbox" />
+            <input name="Grapefruit Juice" type="checkbox" />
               Grapefruit juice
           </label>
            <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Apple_Juice" type="checkbox" />
+            <input name="Apple Juice" type="checkbox" />
               Apple juice
           </label>
            <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Maraschino_Cherry" type="checkbox" />
+            <input name="Maraschino Cherry" type="checkbox" />
               Maraschino cherry
           </label>
            <!--         <br /> -->
@@ -113,7 +113,7 @@
               Cinnamon
           </label>
          <br> <br> <br>
-         <button id="search" method="post" type="submit">
+         <button id="search" method="post" type="submit" onclick="search()">
             Search
         </button>
       </form>
@@ -143,9 +143,17 @@
   
 
 
-  
-  <script type="text/javascript" src="{{ url_for('static', filename= 'mocktail.js') }}"></script>
- 
+  <!-- <script src="{{ url_for('static', filename= 'mocktail.js') }}"></script>
+  <script>
+    search({{ results }});
+  </script> -->
+  <!-- <script type="text/javascript" src="{{ url_for('static', filename= 'mocktail.js') }}">  
+  </script> -->
+  <!-- <script type="text/javascript">
+    myVar = {{results}};
+
+  </script> -->
+
   </body>
 </html>
 

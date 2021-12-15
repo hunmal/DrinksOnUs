@@ -50,6 +50,7 @@ class APIQuery():
 
     def nonAlcSearchByIngredients(self, xs):
         ingCount = self.ingFinder(self.nonAlc)
+        print(xs)
         xs = set(xs)
         dcount = 0
         drinkList = []
@@ -59,15 +60,17 @@ class APIQuery():
             for i in range(1, ingCount[dcount]):
                 if drink["strIngredient" + str(i)] in xs:
                     passableCheck += 1
-            if passableCheck != 0 and passableCheck >= ingCount[dcount] / 2:
+            if passableCheck != 0:
                 drinkList.append(drink)
-            elif passableCheck != 0:
-                closeDrinkList.append(drink)
+            # if passableCheck != 0 and passableCheck >= ingCount[dcount] / 2:
+            #     drinkList.append(drink)
+            # elif passableCheck != 0:
+            #     closeDrinkList.append(drink)
 
             dcount += 1
-        print("\nCloseDrinkList:\n" + str(closeDrinkList))
-        print("\nDrinkList:\n" + str(drinkList))
-        return ( (drinkList, self.ingFinder(drinkList), (closeDrinkList, self.ingFinder(closeDrinkList))) )
+        #print("\nCloseDrinkList:\n" + str(closeDrinkList))
+        #print("\nDrinkList:\n" + str(drinkList))
+        return ( (drinkList, self.ingFinder(drinkList)) )
     
     def ingFinder(self, drinks):
         ingCounter = []

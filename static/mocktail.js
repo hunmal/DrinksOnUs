@@ -30,21 +30,21 @@ function randomMock(){
   }
   request.send();
 }
-function search() {
-  let request = new XMLHttpRequest();
-  let url =
-    "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=non_alcoholic";
-  // url = getURL();
-  request.open("GET", url, true);
-  request.onload = function() {
-    let data = JSON.parse(this.response);
-    let counter = 0;
-    let row = 0;
+function search(drinks) {
+  // let request = new XMLHttpRequest();
+  // let url =
+  //   "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=non_alcoholic";
+  // // url = getURL();
+  // request.open("GET", url, true);
+  // request.onload = function() {
+  //   let data = JSON.parse(this.response);
+  //   let counter = 0;
+  //   let row = 0;
 
-    let list = document.getElementById("list");
+  //   let list = document.getElementById("list");
+    
 
-
-    data.drinks.forEach(drink => {
+    drinks.forEach(drink => {
       if (counter % 4 == 0) {
         // % gets the remainder of current pokemon counter (not division)
         row = document.createElement("div");
@@ -72,7 +72,7 @@ function search() {
       counter++;
     });
   
-  };
+  //};
 
   request.send();
 }

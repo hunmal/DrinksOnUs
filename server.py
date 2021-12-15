@@ -1,8 +1,10 @@
+from re import search
 from flask import Flask, render_template, request, Response
 from flask.helpers import make_response
 from werkzeug.wrappers import response
 from APIQuery import APIQuery
 import os
+
 
 # app is Flask server object
 app = Flask(__name__)
@@ -25,7 +27,10 @@ def mocktailSearch():
     data = list(dict(request.form).keys()) # Get data from HTML form
     q = APIQuery() # Init instance of APIQuery object
     results = q.nonAlcSearchByIngredients(data) # Query API through APIQuery member func
+    search(results)
     response  = make_response(render_template("/mocktail.html", results=results))
+    
+    
     return response # Make and return a response object to be accessed in HTML
 
 # When GET request for cocktial page is made
