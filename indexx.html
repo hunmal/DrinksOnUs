@@ -8,7 +8,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'dist/css/AlcStyle.css') }}" type="text/css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,508 +19,505 @@
   </head>
 
   <body style="background-color:#76949F;">
-    <script type="text/javascript" src="script.js"></script>
+    <!-- <script type="text/javascript" src="script.js"></script> -->
 
-    <a href="index.html"><img style="height: 80px; width: 80px;" class = "home" src="https://cdn.glitch.me/bb65618a-4175-433f-bb99-013df2861f62%2F588a668cd06f6719692a2d1b.png?v=1638924387744">  </a> 
+    <a href="/"><img style="height: 80px; width: 80px;" class = "home" src="https://cdn.glitch.me/bb65618a-4175-433f-bb99-013df2861f62%2F588a668cd06f6719692a2d1b.png?v=1638924387744">  </a> 
 <h1 class="title">
   Alcoholic Drinks
     </h1>
 
       
       
-      <form id="search"> 
+      <form id="search" action="/cocktail/search" method="post"  name="subSearchC"> 
         <p style="font-size:18px;"><strong>Filter by Ingredient</strong></p>
         <label style="font-size:12px;">
-          <input type="checkbox"  />
+          <input type="checkbox"  name="light_rum"/>
           Light Rum</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="applejack"/>
           Applejack</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="gin" />
           Gin</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="dark_rum"/>
           Dark Rum</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="sweet_vermouth"/>
           Sweet Vermouth</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="strawberry_schnapps"/>
           Strawberry Schnapps</label
         >
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="scotch"/>
           Scotch</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="apricot_brandy"/>
           Apricot Brandy</label
         >
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="triple_sec" />
           Triple Sec</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="southern_comfort"/>
           Southern Comfort</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="orange_bitters"/>
           Orange Bitters</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="brandy"/>
           Brandy</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="lemon_vodka"/>
           Lemon Vodka</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="blended_whiskey"/>
           Blended Whiskey</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="dry_vermouth"/>
           Dry Vermouth</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="ameretto"/>
           Amaretto</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="tea"/>
           Tea</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="champagne"/>
           Champagne</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="coffee_liqueur"/>
           Coffee Liqueur</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="bourbon"/>
           Bourbon</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="tequilla"/>
           Tequilla</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="vodka"/>
           Vodka</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="bitters"/>
           Bitters</label
         >
         
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="sugar"/>
           Sugar</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="kahlua"/>
           Kahlua</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="demerara_sugar"/>
           Demerara Sugar</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="dubonnet_rouge"/>
           Dubonnet Rouge</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="watermelon"/>
           Watermelon</label
         >
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="lemon_juice"/>
           Lime Juice</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="irish_whiskey"/>
           Irish Whiskey</label
         >
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="apple_brandy"/>
           Apple Brandy</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="carbonated_water"/>
           Carbonated Water</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="cherry_brandy"/>
           Cherry Brandy</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="creme_de_cacao"/>
           Creme de Cacao</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="grenadine"/>
           Grenadine</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="port"/>
           Port</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="coffee_brandy"/>
           Coffee Brandy</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="red_wine"/>
           Red Wine</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="rum"/>
           Rum</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="grapefruit_juice"/>
           Grapefruit juice</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="ricard"/>
           Ricard</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="sherry"/>
           Sherry</label
         > 
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="cognac"/>
           Cognac</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="sloe_gin"/>
           Sloe gin</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="apple_juice"/>
           Apple Juice</label
         >
         
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="pineapple_juice"/>
           Pineapple Juice</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="lemon_juice"/>
           Lemon Juice</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="sugar_syrup"/>
           Sugar Syrup</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="milk"/>
           Milk</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="strawberries"/>
           Strawberries</label
         >
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="chocolate_syrup"/>
           Chocolate Syrup</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="yoghurt"/>
           Yoghurt</label
         >
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="mango"/>
           Mango</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="ginger" />
           Ginger</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="lime"/>
           Lime</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="cantaloupe" />
           Cantaloupe</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="berries"/>
           Berries</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="grapes"/>
           Grapes</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="kiwi"/>
           Kiwi</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="tomato_juice"/>
           Tomato Juice</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="cocoa_powder"/>
           Cocoa Powder</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="chocolate"/>
           Chocolate</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="heavy_cream"/>
           Heavy Cream</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="galliano"/>
           Galliano</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="peach_vodka"/>
           Peach Vodka</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="ouzu"/>
           Ouzu</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="coffee"/>
           Coffee</label
         >
         
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="spiced_rum"/>
           Spiced Rum</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="water"/>
           Water</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="espresso"/>
           Espresso</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="angelica_root"/>
           Angelica Root</label
         >
 <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="orange"/>
           Orange</label
         >
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="cranberries"/>
           Cranberries</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="johnnie_walker"/>
           Johnnie Walker</label
         >
         <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="apple_cider"/>
           Apple Cider</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="everclear"/>
           Everclear</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="cranberry_juice"/>
           Cranberry Juice</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="egg_yolk"/>
           Egg yolk</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="egg"/>
           Egg</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="grape_juice"/>
           Grape Juice</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="peach_nectar"/>
           Peach Nectar</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="lemon"/>
           Lemon</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="whiskey" />
           Whiskey</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="absolut_citron"/>
           Absolut Citron</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="pisco"/>
           Pisco</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="irish_cream"/>
           Irish Cream</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="ale"/>
           Ale</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="chocolate_liqueur"/>
           Chocolate Liqueur</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="midori_melon_liqueur"/>
           Midori Melon Liqueur</label
         >
         
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="sambuca"/>
           Sambuca</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="cider" />
           Cider</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="sprite"/>
           Sprite</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="7-up"/>
           7-Up</label
         >
         
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="blackberry_brandy"/>
           Blackberry Brandy</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="peppermint_schnapps"/>
           Peppermint Schnapps</label
         >
          <!--         <br /> -->
         <label style="font-size:12px;">
-          <input type="checkbox" />
+          <input type="checkbox" name="creme_de_cassis"/>
           Creme de Cassis</label
         >
        
         
       </form>
-    <br>
-      <button id="search" onclick="search()">
-    Search
-  </button>
+
     </div>
 <!--   <% q=APIQuery() %> 
     <% q.nonAlcSearchByIngredients(self, xs) %> -->
@@ -529,6 +526,13 @@
    <span class="row">
    
         <div id="list"class="col-lg-12 drinks">
+
+            <div id="list"class="col-lg-12 drinks">
+
+                {% if results %}
+                <p>{{results}}</p>
+                {% endif %}
+              </div>
 
         </div>
 
