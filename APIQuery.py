@@ -49,27 +49,21 @@ class APIQuery():
         return (drinksAndInstr, ingCount)
 
     def nonAlcSearchByIngredients(self, xs):
-        ingCount = self.ingFinder(self.nonAlc)
+        ingCount = self.ingFinder(self.nonAlc) # get number if ingredients for each drink
         print(xs)
         xs = set(xs)
         dcount = 0
         drinkList = []
         closeDrinkList = []
-        for drink in self.nonAlc:
+        for drink in self.nonAlc: # for each drink
             passableCheck = 0
-            for i in range(1, ingCount[dcount]):
-                if drink["strIngredient" + str(i)] in xs:
+            for i in range(1, ingCount[dcount]): # for each ingredient
+                if drink["strIngredient" + str(i)] in xs: # if ingredient is in drinks ingredients, add to passibleCheck
                     passableCheck += 1
-            if passableCheck != 0:
+            if passableCheck != 0: # if at least 1 matching ingredient, append drink to return list
                 drinkList.append(drink)
-            # if passableCheck != 0 and passableCheck >= ingCount[dcount] / 2:
-            #     drinkList.append(drink)
-            # elif passableCheck != 0:
-            #     closeDrinkList.append(drink)
 
             dcount += 1
-        #print("\nCloseDrinkList:\n" + str(closeDrinkList))
-        #print("\nDrinkList:\n" + str(drinkList))
         return ( (drinkList, self.ingFinder(drinkList)) )
     
     def ingFinder(self, drinks):

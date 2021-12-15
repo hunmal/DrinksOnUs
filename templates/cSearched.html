@@ -528,16 +528,19 @@
   
    <span class="row">
    
-        <div id="list"class="col-lg-12 drinks">
-
-            <div id="list"class="col-lg-12 drinks">
-
-                {% if results %}
-                <p>{{results}}</p>
-                {% endif %}
-              </div>
-
+    <div id="list"class="col-lg-12 drinks">
+        {% for drink in results[0] %}
+        <div class="row">
+          <div class="col-3 drink" name="poster">
+            <img src="{{ drink.strDrinkThumb }}">
+            <h3 name="name">{{ drink.strDrink }}</h3>
+            <button onclick="location.href='https://www.thecocktaildb.com/drink/{{drink.idDrink}}-{{drink.strDrink}}';"
+                name="more_info">Click for more info</button>
+          </div>
         </div>
+       {% endfor %}
+       {{ results }}
+      </div>
 
   </span>
   
