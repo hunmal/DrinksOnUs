@@ -27,8 +27,7 @@ def mocktailSearch():
     data = list(dict(request.form).keys()) # Get data from HTML form
     q = APIQuery() # Init instance of APIQuery object
     results = q.nonAlcSearchByIngredients(data) # Query API through APIQuery member func
-    search(results)
-    response  = make_response(render_template("/mocktail.html", results=results))
+    response  = make_response(render_template("/mockSearched.html", results=results))
     
     
     return response # Make and return a response object to be accessed in HTML

@@ -42,7 +42,8 @@ function search(drinks) {
   //   let row = 0;
 
   //   let list = document.getElementById("list");
-    
+  console.log("In")  
+  console.log(drinks)
 
     drinks.forEach(drink => {
       if (counter % 4 == 0) {

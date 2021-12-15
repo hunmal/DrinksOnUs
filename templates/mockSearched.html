@@ -49,7 +49,7 @@
           </label>
   <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Pineapple juice" type="checkbox" />
+            <input name="Pineapple Juice" type="checkbox" />
               Pineapple Juice
           </label>
   <!--         <br /> -->
@@ -69,7 +69,7 @@
           </label>
           <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Guava juice" type="checkbox" />
+            <input name="Guava Juice" type="checkbox" />
               Guava juice
           </label>
            <!--         <br /> -->
@@ -79,7 +79,7 @@
           </label>
           <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Pineapple" type="checkbox" />
+            <input name="Pineapple Juice" type="checkbox" />
               Pineapple
             </label>
            <!--         <br /> -->
@@ -89,17 +89,17 @@
           </label>
            <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Grapefruit juice" type="checkbox" />
+            <input name="Grapefruit Juice" type="checkbox" />
               Grapefruit juice
           </label>
            <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Apple juice" type="checkbox" />
+            <input name="Apple Juice" type="checkbox" />
               Apple juice
           </label>
            <!--         <br /> -->
           <label style="font-size:12px;">
-            <input name="Maraschino cherry" type="checkbox" />
+            <input name="Maraschino Cherry" type="checkbox" />
               Maraschino cherry
           </label>
            <!--         <br /> -->
@@ -113,8 +113,7 @@
               Cinnamon
           </label>
          <br> <br> <br>
-     
-         <button id="search" method="post" type="submit" >
+         <button id="search" method="post" type="submit">
             Search
         </button>
 
@@ -132,18 +131,28 @@
 
     
    <span class="row">
+
+    <!-- <script src="{{ url_for('static', filename= 'mocktail.js') }}">
+        search({{ results }});
+    </script> -->
+    <!-- <script>
+      search('{{ results }}');
+    </script> -->
+    
    
-        <!-- <div id="list"class="col-lg-12 drinks">
-          {% for drink in results %}
-          <p>{{results}}</p>
-          <div class="row">
-            <div class="col-3 drink" name="poster">
-              <img src="{{ drink[strDrinkThumb] }}">
-              <h3 name="name">{{ drink[strDrink] }}</h3>
-            </div>
+    <div id="list"class="col-lg-12 drinks">
+        {% for drink in results[0] %}
+        <div class="row">
+          <div class="col-3 drink" name="poster">
+            <img src="{{ drink.strDrinkThumb }}">
+            <h3 name="name">{{ drink.strDrink }}</h3>
+            <button onclick="location.href='https://www.thecocktaildb.com/drink/{{drink.idDrink}}-{{drink.strDrink}}';"
+                name="more_info">Click for more info</button>
           </div>
-         {% endfor %}
-        </div> -->
+        </div>
+       {% endfor %}
+       {{ results }}
+      </div>
      
 
   </span>
