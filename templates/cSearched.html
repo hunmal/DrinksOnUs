@@ -517,30 +517,30 @@
        
         <button id="search" method="post" type="submit" >
           Search
-      </button>
+        </button>
         
       </form>
 
     </div>
-<!--   <% q=APIQuery() %> 
-    <% q.nonAlcSearchByIngredients(self, xs) %> -->
-
   
    <span class="row">
    
     <div id="list"class="col-lg-12 drinks">
-        {% for drink in results[0] %}
-        <div class="row">
+      {% for drink in results[0] %}
+        {% if loop.index0 % 4 == 0 %}
+          <div class="row">
+        {% endif %}
           <div class="col-3 drink" name="poster">
             <img src="{{ drink.strDrinkThumb }}">
             <h3 name="name">{{ drink.strDrink }}</h3>
             <button onclick="location.href='https://www.thecocktaildb.com/drink/{{drink.idDrink}}-{{drink.strDrink}}';"
                 name="more_info">Click for more info</button>
           </div>
-        </div>
-       {% endfor %}
-       {{ results }}
-      </div>
+        {% if (loop.index0 + 1) % 4 == 0  or loop.last %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
 
   </span>
   
