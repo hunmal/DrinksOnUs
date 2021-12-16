@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--    Head of page, includes script and style page for css -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=800" />
     <link
@@ -15,12 +16,12 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-<!--     <% import APIQuery.py %> -->
+
   </head>
 
   <body style="background-color:#5F506B;">
     <script type="text/javascript" src="{{ url_for('static', filename= 'mocktail.js') }}"></script>
-
+<!--    Button for clearing page function > -->
     <a href="/"><img style="height: 80px; width: 80px;" class = "home" src="https://cdn.glitch.me/bb65618a-4175-433f-bb99-013df2861f62%2F588a668cd06f6719692a2d1b.png?v=1638924387744">  </a> 
 <button id="top" onclick="clearPage()">
   Clear Page
@@ -30,7 +31,7 @@
   Non-Alcoholic Drinks
     </p>
     
-
+<!--     search box including all options -->
       
       <div class="center">
       <form id="search"  action="/mocktail/search" method="post"  name="subSearchMock"> 
@@ -118,12 +119,10 @@
       <br>
       <br>
         
-  <div id="randoList">
-            
-          </div>
+ 
    
   </div>
-
+<!--    display of results in format of row containing up to four cards, uses python functions -->
     
   <span class="row">   
     <div id="list"class="col-lg-12 drinks">
