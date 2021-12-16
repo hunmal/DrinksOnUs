@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--     Head includes link to css page and bootstrap -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=800" />
     <link
@@ -15,12 +16,12 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-<!--     <% import APIQuery.py %> -->
+
   </head>
 
   <body style="background-color:#5F506B;">
     <script type="text/javascript" src="{{ url_for('static', filename= 'mocktail.js') }}"></script>
-
+<!--     Button to clear page -->
     <a href="/"><img style="height: 80px; width: 80px;" class = "home" src="https://cdn.glitch.me/bb65618a-4175-433f-bb99-013df2861f62%2F588a668cd06f6719692a2d1b.png?v=1638924387744">  </a> 
 <button id="top" onclick="clearPage()">
   Clear Page
@@ -31,7 +32,7 @@
     </p>
     
 
-      
+      <!--     Form for searchbox  -->
       <div class="center">
       <form id="search"  action="/mocktail/search" method="post"  name="subSearchMock"> 
         <p style="font-size:18px;"><strong>Filter by Ingredient</strong></p>
