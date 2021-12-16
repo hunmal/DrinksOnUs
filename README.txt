@@ -11,7 +11,7 @@ In today’s society drinks at bars or restaurants are way too overpriced. In re
     Then, in the project directory, you must download the necessary python packages
         run the command:
 
-            "pip install -r require.py"
+            "pip install -r require.txt"
     
     Next, in the same directory, start the server
         run the command:
