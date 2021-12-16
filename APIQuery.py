@@ -40,7 +40,8 @@ class APIQuery():
         ingSearch = self.ingKey + ",".join(xs)
         workerRes = self.searchWorker(ingSearch)
         print("\nWaiting for searchWorker")
-
+        if (workerRes['drinks'] == 'None Found'):
+            return ('None Found')
         resDrinkIds = [x["idDrink"] for x in workerRes["drinks"]]   # Get ids of all drinks returned
         # lookup by id drinks to get their full profile
         drinksAndInstr = [self.searchWorker(self.lingKey + x)["drinks"][0] for x in resDrinkIds]

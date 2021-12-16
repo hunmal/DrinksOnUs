@@ -43,6 +43,8 @@ def cocktailSearch():
     data = list(dict(request.form).keys()) # Get data from HTML form
     q = APIQuery() # Init instance of APIQuery object
     results = q.searchByIngredients(data) # Query API through APIQuery member func
+    if (results == 'None Found'):
+        results = ([],[])
     response  = make_response(render_template("/cSearched.html", results=results))
     return response # Make and return a response object to be accessed in HTML
     
